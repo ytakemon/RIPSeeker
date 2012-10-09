@@ -1,0 +1,17 @@
+citEntry(entry="article",
+         title = "RIPSeeker: a statistical package for identifying protein-associated transcripts from RIP-seq experiments",
+         author = personList(	as.person("Yue Li"), 
+                        	as.person("Dorothy Yanling Zhao"),
+				as.person("Jack Greenblatt"),
+				as.person("Zhaolei Zhang")),
+         year = 2012,
+         journal = "Nucleic Acid Research",
+         volume = "X",
+         pages = "X",
+         doi = "X",
+         url = "X",
+         
+         textVersion = 
+         paste("Yue Li, Dorothy Yanling Zhao, Jack Greenblatt and Zhaolei Zhang (2012):", 
+               "RIPSeeker: a statistical package for identifying protein-associated transcripts from RIP-seq experiments",
+                "Nucleic Acid Research X:X" ) )
