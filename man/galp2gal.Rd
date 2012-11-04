@@ -52,7 +52,7 @@ Yue Li
 \examples{
 library(Rsamtools)
 
-ex1_file <- system.file("extdata", "ex1.bam", package="Rsamtools")
+ex1_file <- system.file("extdata", "pairedend/ex1.bam", package="RIPSeeker")
 
 galp <- readGappedAlignmentPairs(ex1_file, use.names=TRUE)
 
