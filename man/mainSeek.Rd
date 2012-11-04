@@ -13,7 +13,7 @@ A back-end function used by the front-end function \code{\link{ripSeek}} to trai
 mainSeek(bamFiles, reverseComplement = FALSE, 
 	genomeBuild = "mm9", uniqueHit = TRUE, 
 	assignMultihits = TRUE, strandType = NULL, 
- 	rerunWithDisambiguatedMultihits = TRUE,
+  paired=FALSE, rerunWithDisambiguatedMultihits = TRUE,
  	silentMain = FALSE, multicore = TRUE, 
  	returnAllResults = TRUE, ...)
 }
@@ -42,6 +42,10 @@ mainSeek(bamFiles, reverseComplement = FALSE,
   \item{strandType}{
 %%     ~~Describe \code{strandType} here~~
 	A character variable indicate which strand the RIPSeeker needs to operate on. The options are NULL, '+', '-', '*'. If NULL or '*', then all of the reads will be used (preferable for non-strand specific sequencing). If '+' or '-', only reads from '+' or '-' strand will be used, respectively. Note that the sign is assumed to be THE SAME AS the strand sign of the processed alignment object and will be the opposite sign if reverseComplement is TRUE (See \code{reverseComplement} above).
+}
+  \item{paired}{
+%%     ~~Describe \code{paired} here~~
+  Binary to indicate whether the library is paired-end (TRUE) or single-end (FALSE by default) (see \code{\link{getAlignGal}}).
 }
   \item{rerunWithDisambiguatedMultihits}{
 %%     ~~Describe \code{rerunWithDisambiguatedMultihits} here~~

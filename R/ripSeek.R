@@ -5,8 +5,8 @@
 #
 # Author: Yue Li
 ###############################################################################
-ripSeek <- function(bamPath, cNAME, binSize=NULL, strandType=NULL,
-		biomaRt_dataset, goAnno, exportFormat = "gff3", 
+ripSeek <- function(bamPath, cNAME, binSize=NULL, strandType=NULL, 		
+		paired=FALSE, biomaRt_dataset, goAnno, exportFormat = "gff3", 
 		annotateFormat = "txt", annotateType = "TSS", outDir, 
 		padjMethod="BH", logOddCutoff=0,
 		pvalCutoff=1, pvalAdjCutoff=1, eFDRCutoff=1, ...)
@@ -84,7 +84,7 @@ ripSeek <- function(bamPath, cNAME, binSize=NULL, strandType=NULL,
 	################ mainSeek on RIP ################	
 	message(sprintf("\n\n*%s. Analyzing RIP library:\n", as.roman(stage)))
 		
-	mainSeekOutputRIP <- mainSeek(bamFilesRIP, binSize=binSize, strandType=strandType, ...)
+	mainSeekOutputRIP <- mainSeek(bamFilesRIP, binSize=binSize, strandType=strandType, paired=paired, ...)
 		
 	################ mainSeek on CTL ################
 	if(exists("bamFilesCTL")) {
@@ -94,7 +94,7 @@ ripSeek <- function(bamPath, cNAME, binSize=NULL, strandType=NULL,
 		# use defined binSize from RIP
 		RIPBinSize <- lapply(mainSeekOutputRIP$nbhGRList, function(x) median(width(x)))
 						
-		mainSeekOutputCTL <- mainSeek(bamFilesCTL, binSize=RIPBinSize, strandType=strandType, ...)		
+		mainSeekOutputCTL <- mainSeek(bamFilesCTL, binSize=RIPBinSize, strandType=strandType, paired=paired, ...)		
 	}
 	
 	stage <- stage + 1

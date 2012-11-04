@@ -11,7 +11,7 @@ This function is the main interface to most essential functions of RIPSeeker pac
 }
 \usage{
 ripSeek(bamPath, cNAME, binSize = NULL, strandType = NULL, 
-	biomaRt_dataset, goAnno, exportFormat = "gff3", 
+	paired=FALSE, biomaRt_dataset, goAnno, exportFormat = "gff3", 
 	annotateFormat = "txt", annotateType = "TSS", outDir, 
 	padjMethod = "BH", logOddCutoff = 0, pvalCutoff = 1, 
 	pvalAdjCutoff = 1, eFDRCutoff = 1, ...)
@@ -33,6 +33,10 @@ ripSeek(bamPath, cNAME, binSize = NULL, strandType = NULL,
   \item{strandType}{
 %%     ~~Describe \code{strandType} here~~
 	Type of strand can be +, -, or * as in GappedAlignments, GappedAlignmentPairs, or GRanges (see \code{\link{GenomicRanges}}).
+}
+  \item{paired}{
+%%     ~~Describe \code{strandType} here~~
+  Binary to indicate whether the library is paired-end (TRUE) or single-end (FALSE by default) (see \code{\link{getAlignGal}}).
 }
   \item{biomaRt_dataset}{
 %%     ~~Describe \code{biomaRt_dataset} here~~

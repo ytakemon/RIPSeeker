@@ -1,0 +1,2 @@
+Added paired option to the ripSeek and mainSeek function.
+now using mcols instead of elementData

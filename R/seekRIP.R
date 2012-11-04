@@ -39,9 +39,9 @@ seekRIP <- function(nbhGRRIP, nbhGRCTL=NULL, padjMethod="BH", logOddCutoff=0,
 		eFDR <- sapply(values(mergedRIP)$pval, empiricalFDR, 
 				values(mergedRIP)$pval, values(mergedCTL)$pval)
 		
-		values(mergedRIP) <- cbind(as.data.frame(values(mergedRIP)), eFDR)
+#		values(mergedRIP) <- cbind(as.data.frame(values(mergedRIP)), eFDR)
 		
-#		if(existsFunction("mcols")) values(mergedRIP) <- cbind(mcols(mergedRIP), eFDR)		
+		if(existsFunction("mcols")) values(mergedRIP) <- cbind(mcols(mergedRIP), eFDR) else values(mergedRIP) <- cbind(as.data.frame(values(mergedRIP)), eFDR)
 	}
 		
 	# construct cutoff rule

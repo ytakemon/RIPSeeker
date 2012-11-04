@@ -8,7 +8,7 @@
 
 mainSeek <- function(bamFiles, reverseComplement=FALSE, genomeBuild="mm9",
 		uniqueHit = TRUE, assignMultihits = TRUE, strandType = NULL,
-		rerunWithDisambiguatedMultihits = TRUE, silentMain=FALSE,
+		paired=FALSE, rerunWithDisambiguatedMultihits = TRUE, silentMain=FALSE,
 		multicore = TRUE, returnAllResults = TRUE, ...)	
 {	
 	if(multicore) {
@@ -31,7 +31,7 @@ mainSeek <- function(bamFiles, reverseComplement=FALSE, genomeBuild="mm9",
 	
 	message(sprintf("\n**%s. Process and combine alignment files\n", LETTERS[stage]))
 	
-	alignGal <- combineAlignGals(bamFiles, reverseComplement=reverseComplement, genomeBuild=genomeBuild)
+	alignGal <- combineAlignGals(bamFiles, reverseComplement=reverseComplement, genomeBuild=genomeBuild, paired=paired)
 	
 	if(!is.null(strandType)) {
 		
