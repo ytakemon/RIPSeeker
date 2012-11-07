@@ -10,9 +10,9 @@
 \usepackage{natbib}
 \usepackage{graphicx}
 
-% \usepackage{xr}
-% \externaldocument[NAR-]{/Users/mike/Desktop/nar-latex2010/nar}
-% \externaldocument[SD-]{/Users/mike/Desktop/nar-latex2010/SupplementaryData/SD}
+\usepackage{xr}
+\externaldocument[NAR-]{nar}
+\externaldocument[SD-]{SD}
 
 \hypersetup{ 
 colorlinks,

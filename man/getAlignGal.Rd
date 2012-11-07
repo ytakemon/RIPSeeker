@@ -39,7 +39,7 @@ getAlignGal(alignFilePath, format, genomeBuild,
 }
   \item{returnDuplicate}{
 %%     ~~Describe \code{returnDuplicate} here~~
-	Binary indicator to instruct whether the duplicate alignmnets need to be returned (Default: FALSE). Duplicate reads are a set of reads that align to exactly the same genomic coordinate. Because transcripts are usually hundreds or thousands of base pairs long and thus much longer than the read (25-100 nt), the chance that the same 25-100 nt portion of the transcript being sequenced multiple times is very small and may very likely be due to PCR artifact.
+	Indicator (TRUE, FALSE, NA) to instruct whether the duplicate alignmnets need to be returned (Default: FALSE). Duplicate reads are a set of reads that align to exactly the same genomic coordinate. Because transcripts are usually hundreds or thousands of base pairs long and thus much longer than the read (25-100 nt), the chance that the same 25-100 nt portion of the transcript being sequenced multiple times is very small and may very likely be due to PCR artifact. This argument is acutally passed to 'isDuplicate' in \code{\link[Rsamtools]{scanBamFlag}}.
 }
   \item{flagMultiHits}{
 %%     ~~Describe \code{flagMultiHits} here~~
