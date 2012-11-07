@@ -12,8 +12,8 @@ RIPSeeker infers and discriminates RIP peaks from RIP-seq alignments using two-s
 \tabular{ll}{
 Package: \tab RIPSeeker\cr
 Type: \tab Package\cr
-Version: \tab 0.99.2\cr
-Date: \tab 2012-11-01\cr
+Version: \tab 0.99.3\cr
+Date: \tab 2012-11-06\cr
 License: \tab GPL-2\cr
 }
 The front-end main function \code{\link{ripSeek}} suffices for most applications. The function takes as the only required argument the path to alignment files (BAM/BED/SAM) and outputs predicted RIP regions. Optionally, user may indicate via 'cNAME' which file(s) in the first file argument list is/are control to enable empirical false discover rate (eFDR) computation. If the arguments 'biomaRt_dataset' and/or 'goAnno' are set, ripSeek will return the annotated RIP predictions and the enriched GO terms corresponding to the genomic context of the RIP predictions. User can also specify the thresholds for statistical significance scores via \code{logOddCutoff}, \code{pvalCutoff}, \code{pvalAdjCutoff}, \code{eFDRCutoff}.
