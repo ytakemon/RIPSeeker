@@ -22,9 +22,8 @@ logScoreWithControl <- function(nbhGRRIP, nbhGRCTL, padjMethod="BH", getControlS
 		
 	logOddScore <- logOddRIP - logOddCTL
 	
-#	values(nbhGRRIP) <- cbind(as.data.frame(values(nbhGRRIP)), logOddScore)
 				
-	if(existsFunction("mcols")) values(nbhGRRIP) <- cbind(mcols(nbhGRRIP), logOddScore) else values(nbhGRRIP) <- cbind(as.data.frame(values(nbhGRRIP)), logOddScore)
+	if(existsFunction("mcols_inefficient")) values(nbhGRRIP) <- cbind(mcols(nbhGRRIP), logOddScore) else values(nbhGRRIP) <- cbind(as.data.frame(values(nbhGRRIP)), logOddScore)
 	
 	
 	enrichIdx <- which(values(nbhGRRIP)$viterbi_state == 2)
@@ -58,9 +57,8 @@ logScoreWithControl <- function(nbhGRRIP, nbhGRCTL, padjMethod="BH", getControlS
 			
 	pvalAdj <- p.adjust(pval, padjMethod)
 	
-	values(mergedRIP) <- cbind(as.data.frame(values(mergedRIP)), pval, pvalAdj)
-	
-	#if(existsFunction("mcols")) values(mergedRIP) <- cbind(mcols(mergedRIP), pval, pvalAdj)
+		
+	if(existsFunction("mcols_inefficient")) values(mergedRIP) <- cbind(mcols(mergedRIP), pval, pvalAdj) else values(mergedRIP) <- cbind(as.data.frame(values(mergedRIP)), pval, pvalAdj)
 			
 	
 	if(getControlStats) {
@@ -69,9 +67,8 @@ logScoreWithControl <- function(nbhGRRIP, nbhGRCTL, padjMethod="BH", getControlS
 		
 		logOddScore <- logOddCTL[enrichIdx]
 		
-#		values(unmergedCTL) <- cbind(as.data.frame(values(unmergedCTL)), logOddScore)
 		
-		if(existsFunction("mcols")) values(unmergedCTL) <- cbind(mcols(unmergedCTL), logOddScore) else values(unmergedCTL) <- cbind(as.data.frame(values(unmergedCTL)), logOddScore) 
+		if(existsFunction("mcols_inefficient")) values(unmergedCTL) <- cbind(mcols(unmergedCTL), logOddScore) else values(unmergedCTL) <- cbind(as.data.frame(values(unmergedCTL)), logOddScore) 
 		
 								
 		mergedCTLList <- lapply(split(overlapIdx, queryHits(overlapIdx)),
@@ -86,12 +83,9 @@ logScoreWithControl <- function(nbhGRRIP, nbhGRCTL, padjMethod="BH", getControlS
 		
 		
 		CTLcolnames <- paste("CTL", names(values(mergedCTL)), sep="_")
-		
-				
-#		values(mergedRIP) <- cbind(as.data.frame(values(mergedRIP)), 
-#				as.data.frame(values(mergedCTL)))
+						
 	
-		if(existsFunction("mcols")) values(mergedRIP) <- cbind(mcols(mergedRIP), mcols(mergedCTL)) else values(mergedRIP) <- cbind(as.data.frame(values(mergedRIP)), 
+		if(existsFunction("mcols_inefficient")) values(mergedRIP) <- cbind(mcols(mergedRIP), mcols(mergedCTL)) else values(mergedRIP) <- cbind(as.data.frame(values(mergedRIP)), 
 					as.data.frame(values(mergedCTL)))
 				
 		names(values(mergedRIP)) <- c(RIPcolnames, CTLcolnames)

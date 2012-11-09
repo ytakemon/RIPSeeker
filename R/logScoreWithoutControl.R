@@ -12,10 +12,8 @@ logScoreWithoutControl <- function(nbhGRRIP, padjMethod="BH")
 	stopifnot(!missing(nbhGRRIP))
 			
 	logOddScore <- computeLogOdd(nbhGRRIP)
-		
-	values(nbhGRRIP) <- cbind(as.data.frame(values(nbhGRRIP)), logOddScore)
-	
-#	if(existsFunction("mcols")) values(nbhGRRIP) <- cbind(mcols(nbhGRRIP), logOddScore)
+				
+	if(existsFunction("mcols_inefficient")) values(nbhGRRIP) <- cbind(mcols(nbhGRRIP), logOddScore) else values(nbhGRRIP) <- cbind(as.data.frame(values(nbhGRRIP)), logOddScore)
 	
 	enrichIdx <- which(values(nbhGRRIP)$viterbi_state == 2)
 	
@@ -46,10 +44,9 @@ logScoreWithoutControl <- function(nbhGRRIP, padjMethod="BH")
 			sd(logOddScore), lower.tail=FALSE)
 			
 	pvalAdj <- p.adjust(pval, padjMethod)
+		
 	
-	values(mergedRIP) <-  cbind(as.data.frame(values(mergedRIP)), pval, pvalAdj)
-	
-#	if(existsFunction("mcols")) values(mergedRIP) <-  cbind(mcols(mergedRIP), pval, pvalAdj)
+	if(existsFunction("mcols_inefficient")) values(mergedRIP) <-  cbind(mcols(mergedRIP), pval, pvalAdj) else values(mergedRIP) <-  cbind(as.data.frame(values(mergedRIP)), pval, pvalAdj)
 	
 	return(mergedRIP)	
 }
