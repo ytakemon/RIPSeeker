@@ -1,2 +1,4 @@
 Added paired option to the ripSeek and mainSeek function.
-now using mcols instead of elementData
+Now using mcols instead of elementData
+Switch back to elementData as mcols seem to consume too much memory
+Added a line in galp2gal to prevent read ends larger than chromosome length, which may happen when reads are not properly paired.

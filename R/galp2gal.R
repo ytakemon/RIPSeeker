@@ -8,10 +8,10 @@
 
 galp2gal <- function(galp)
 {	
-	betweenPairCigar <- paste(start(right(galp)) - end(left(galp)) + 1, "N", sep="")
+	betweenPairCigar <- paste(abs(start(right(galp)) - end(left(galp)) + 1), "N", sep="")
 	
 	galcigar <- paste(cigar(left(galp)), betweenPairCigar, cigar(right(galp)), sep="")
-	
+  		
 	gal <- GappedAlignments(
 				seqnames = seqnames(galp),
 			
@@ -24,5 +24,13 @@ galp2gal <- function(galp)
 				names = names(left(galp)),
 				
 				seqlengths = seqlengths(galp))
-	return(gal)
+  
+	# in case where end of a read exceeds chrom length
+	# (which occurs for impropoer paired reads with large gap)	
+	idx <- which(end(gal) < seqlengths(gal)[as.character(seqnames(gal))])	
+  
+  if(length(idx) < length(gal))    
+    warning(sprintf("%d read-pairs with end larger than chromosome length are discarded", length(gal) - length(idx) + 1))
+  
+	return(gal[idx,])  	
 }

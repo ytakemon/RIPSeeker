@@ -164,7 +164,7 @@ mainSeek <- function(bamFiles, reverseComplement=FALSE, genomeBuild="mm9",
 			}
 						
 			
-			nbhGRList <- GRangesList(nbhGRList)				
+			nbhGRList <- GRangesList(nbhGRList)            
 		}		
 		
 		

@@ -51,10 +51,11 @@ logScoreWithControl <- function(nbhGRRIP, nbhGRCTL, padjMethod="BH", getControlS
 	mergedRIP <- do.call(c, mergedRIPList)
 
 		
-	# compute p-value of the averaged logOddScore
+	# compute p-value of the averaged logOddScore (estimate mean with all bins)
 	pval <- pnorm(values(mergedRIP)$logOddScore, mean(logOddScore), 
 			sd(logOddScore), lower.tail=FALSE)
-			
+  
+				
 	pvalAdj <- p.adjust(pval, padjMethod)
 	
 		
