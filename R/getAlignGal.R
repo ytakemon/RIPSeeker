@@ -54,7 +54,7 @@ getAlignGal <- function(alignFilePath, format, genomeBuild,
 		
 	} else { # single-end
 		
-		param <- ScanBamParam(flag=scanBamFlag(isUnmappedQuery=FALSE, isDuplicate=returnDuplicate))		
+		param <- ScanBamParam(flag=scanBamFlag(isUnmappedQuery=FALSE, isDuplicate=returnDuplicate))
 	}
 
 	message(sprintf("Processing %s ... ", alignFilePath), appendLF = FALSE)

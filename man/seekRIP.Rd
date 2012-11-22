@@ -11,7 +11,7 @@ Based on the posteriors derived from HMM by \code{\link{mainSeek}}, find the sig
 }
 \usage{
 seekRIP(nbhGRRIP, nbhGRCTL = NULL, padjMethod = "BH", 
-	logOddCutoff = 0, pvalCutoff = 1, pvalAdjCutoff = 1, 
+	logOddCutoff = -Inf, pvalCutoff = 1, pvalAdjCutoff = 1, 
 	eFDRCutoff = 1)
 }
 %- maybe also 'usage' for other objects documented here.
@@ -30,7 +30,7 @@ seekRIP(nbhGRRIP, nbhGRCTL = NULL, padjMethod = "BH",
 }
   \item{logOddCutoff}{
 %%     ~~Describe \code{logOddCutoff} here~~
-	Threshold for the  log odd ratio of posterior for the RIP over the background states (See \code{\link{seekRIP}}). Only peaks with logOdd score \emph{greater} than the \code{logOddCutoff} will be reported. Default: 1.
+	Threshold for the  log odd ratio of posterior for the RIP over the background states (See \code{\link{seekRIP}}). Only peaks with logOdd score \emph{greater} than the \code{logOddCutoff} will be reported. Default: -Inf (i.e. no cutoff).
 }
   \item{pvalCutoff}{
 %%     ~~Describe \code{pvalCutoff} here~~

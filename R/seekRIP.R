@@ -6,7 +6,7 @@
 # Author: Yue Li
 ###############################################################################
 
-seekRIP <- function(nbhGRRIP, nbhGRCTL=NULL, padjMethod="BH", logOddCutoff=0,
+seekRIP <- function(nbhGRRIP, nbhGRCTL=NULL, padjMethod="BH", logOddCutoff=-Inf,
 		pvalCutoff=1, pvalAdjCutoff=1, eFDRCutoff=1)
 {
 	
@@ -45,9 +45,9 @@ seekRIP <- function(nbhGRRIP, nbhGRCTL=NULL, padjMethod="BH", logOddCutoff=0,
 		
 	# construct cutoff rule
 	cutoff <- 
-			values(mergedRIP)$logOddScore > logOddCutoff &
-			values(mergedRIP)$pval < pvalCutoff &
-			values(mergedRIP)$pvalAdj < pvalAdjCutoff
+			values(mergedRIP)$logOddScore >= logOddCutoff &
+			values(mergedRIP)$pval <= pvalCutoff &
+			values(mergedRIP)$pvalAdj <= pvalAdjCutoff
 	
 	
 	if(!is.null(nbhGRCTL)) cutoff <- cutoff & values(mergedRIP)$eFDR < eFDRCutoff
