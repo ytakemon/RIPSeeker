@@ -178,7 +178,7 @@ computeRPKM <- function(bamFiles, RIPSeekerRead=TRUE, paired=FALSE,
 			
 	
 	##################### Outputs #####################
-	if(!missing(saveData)) write.table(rpkmDF, file=saveData, sep="\t", quote=F, row.names=F)
+	if(!missing(saveData)) save(rpkmDF, file=saveData)
 	
 
 	if(justRPKM) {

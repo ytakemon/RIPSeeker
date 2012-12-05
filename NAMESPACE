@@ -21,6 +21,7 @@ export(
         combineAlignGals,
         computeLogOdd,
         computeRPKM,
+	combineRIP,
         disambiguateMultihits,
         empiricalFDR,
         evalBinSize,

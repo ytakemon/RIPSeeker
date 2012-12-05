@@ -72,7 +72,7 @@ ripSeek(bamPath, cNAME, binSize = NULL, strandType = NULL,
 }
   \item{pvalCutoff}{
 %%     ~~Describe \code{pvalCutoff} here~~
-	Threshold for the p-value for the logOdd score. Only peaks with p-value \emph{less} than the \code{logOddCutoff} will be reported. Default: 1 (i.e. no cutoff).
+	Threshold for the p-value for the logOdd score. Only peaks with p-value \emph{less} than the \code{pvalCutoff} will be reported. Default: 1 (i.e. no cutoff).
 }
   \item{pvalAdjCutoff}{
 %%     ~~Describe \code{pvalAdjCutoff} here~~
@@ -80,7 +80,7 @@ ripSeek(bamPath, cNAME, binSize = NULL, strandType = NULL,
 }
   \item{eFDRCutoff}{
 %%     ~~Describe \code{eFDRCutoff} here~~
-	Threshold for the empirical false discovery rate (eFDR). Only peaks with eFDR \emph{less} than the \code{pvalAdjCutoff} will be reported. Default: 1 (i.e. no cutoff).
+	Threshold for the empirical false discovery rate (eFDR). Only peaks with eFDR \emph{less} than the \code{eFDRCutoff} will be reported. Default: 1 (i.e. no cutoff).
 }
   \item{\dots}{
 %%     ~~Describe \code{\dots} here~~
