@@ -60,7 +60,7 @@ While \Rpackage{RIPSeeker} is specifically tailored for RIP-seq data analysis, i
 
 
 \section{\Rpackage{RIPSeeker} overview}
-Figure \ref{NAR-workflow} in the manuscript (being) submitted for peer-review presents the workflow of \Rpackage{RIPSeeker}. The input for RIPSeeker is a list of read alignments in BAM/BED/SAM format. Mapping reads to the reference genome can be performed by any RNA-seq aligner such as \TopHat~ \cite{Trapnell:2009dp}. After post-processing the alignment input by \Rfunction{combineAlignGals}, RIPSeeker first stratifies the genome into bins of automatically selected (\Rfunction{selectBinSize}) or a fixed user-defined size. Each bin may contain more than one aligned read. Multiple bins may together correspond to a single RNA transcript that binds to the protein of interest. Thus, these bins when treated as individual observations are not independent identically distributed (\emph{i.i.d.}) and need to be treated as dependent events. Hidden Markov model (HMM) provides a sensible and efficient way to probabilistically model the dependence between sequential events through hidden variables \citep{Rabiner:1989hs, MBishop:2006uc}. The adaptation of HMM is inspired by HPeak, which was specifically designed for ChIP-seq \citep{Qin:2010gt}.
+Figure \ref{NAR-workflow} in the manuscript (in press) for peer-review presents the workflow of \Rpackage{RIPSeeker}. The input for RIPSeeker is a list of read alignments in BAM/BED/SAM format. Mapping reads to the reference genome can be performed by any RNA-seq aligner such as \TopHat~ \cite{Trapnell:2009dp}. After post-processing the alignment input by \Rfunction{combineAlignGals}, RIPSeeker first stratifies the genome into bins of automatically selected (\Rfunction{selectBinSize}) or a fixed user-defined size. Each bin may contain more than one aligned read. Multiple bins may together correspond to a single RNA transcript that binds to the protein of interest. Thus, these bins when treated as individual observations are not independent identically distributed (\emph{i.i.d.}) and need to be treated as dependent events. Hidden Markov model (HMM) provides a sensible and efficient way to probabilistically model the dependence between sequential events through hidden variables \citep{Rabiner:1989hs, MBishop:2006uc}. The adaptation of HMM is inspired by HPeak, which was specifically designed for ChIP-seq \citep{Qin:2010gt}.
 
 As an overview, RIPSeeker consists of two major steps: probabilistic inference of RIP regions (\Rfunction{mainSeek}) and significance test for the inferred RIP regions from HMM (\Rfunction{seekRIP}). In the first step, we apply a two-state HMM to model the background and RIP distributions (or emission probabilities) of RIP-seq read counts as negative binomial distributions, which has been shown by \cite{Anders:2010fu} to be a more realistic parametric model than Gaussian and Poisson models. The parameters of HMM are learned from the data by expectation-maximization (EM). The intermediate quantities required in the EM iterations are efficiently computed using forward-backward algorithm. After the optimization, Viterbi algorithm is applied to derive the most probable sequence of hidden states, which encodes whether each region is background (1) or RIP (2) across the genome. The consecutive RIP bins are merged into a single RIP region. In the second step, we compute the statistical significance of each RIP region with or without a control library based on the posterior probabilities derived directly from the HMM.
 
@@ -70,7 +70,9 @@ Although the ultimate goal is to predict RIP regions, each step or component in 
 
 <<RIPSeeker, eval=TRUE>>=
 library(RIPSeeker)
+@
 
+<<helppage, eval=FALSE>>=
 ?RIPSeeker
 @
 
