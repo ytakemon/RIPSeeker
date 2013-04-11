@@ -7,7 +7,7 @@ Import and processs in BAM/SAM/BED format
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
-Import and process single-end or paired-end alignments in a BAM/SAM/BED file to retain valid alignments defined by the arguments below. Multihits (same read mapped to multiple loci) are flagged for the subsequent disambiguation with function \code{\link{disambiguateMultihits}}). The final output is a GappedAlignment object.
+Import and process single-end or paired-end alignments in a BAM/SAM/BED file to retain valid alignments defined by the arguments below. Multihits (same read mapped to multiple loci) are flagged for the subsequent disambiguation with function \code{\link{disambiguateMultihits}}). The final output is a GAlignments object.
 }
 \usage{
 getAlignGal(alignFilePath, format, genomeBuild, 
@@ -27,7 +27,7 @@ getAlignGal(alignFilePath, format, genomeBuild,
 }
   \item{genomeBuild}{
 %%     ~~Describe \code{genomeBuild} here~~
-	Genome build used to obtain the chromosome information from online UCSC database in order to construct GappedAlignment object. Since the BAM/SAM header provides the chromosome information, the argument needs to be set only in the absence of the header information for some BAM/SAM files or when BED file is used. Examples for the common \code{genomeBuild} are "mm9" for mouse or "hg19" for human reference genomes. Note that an appropriate genome build that has been used in the alignment is important for desirable outcome. For instance, user should use "mm10" if the alignments are based on "mm10" rather than "mm9" genome build.
+	Genome build used to obtain the chromosome information from online UCSC database in order to construct GAlignments object. Since the BAM/SAM header provides the chromosome information, the argument needs to be set only in the absence of the header information for some BAM/SAM files or when BED file is used. Examples for the common \code{genomeBuild} are "mm9" for mouse or "hg19" for human reference genomes. Note that an appropriate genome build that has been used in the alignment is important for desirable outcome. For instance, user should use "mm10" if the alignments are based on "mm10" rather than "mm9" genome build.
 }
   \item{deleteGeneratedBAM}{
 %%     ~~Describe \code{deleteGeneratedBAM} here~~
@@ -60,7 +60,7 @@ getAlignGal(alignFilePath, format, genomeBuild,
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
-	The BAM file is imported using \code{\link[GenomicRanges]{readGappedAlignments}} for single-end or \code{\link[GenomicRanges]{readGappedAlignmentPairs}} for paired-end alignments. The SAM file is converted to BAM first and then imported as above. The BED file is first imported by \code{\link[rtracklayer]{import}} as GRanges object and subsequently converted to \code{GappedAlignments} via the constructor function \code{\link[GenomicRanges]{GappedAlignments}}.
+	The BAM file is imported using \code{\link[GenomicRanges]{readGAlignments}} for single-end or \code{\link[GenomicRanges]{readGAlignmentPairs}} for paired-end alignments. The SAM file is converted to BAM first and then imported as above. The BED file is first imported by \code{\link[rtracklayer]{import}} as GRanges object and subsequently converted to \code{GAlignments} via the constructor function \code{\link[GenomicRanges]{GAlignments}}.
 }
 \value{
 %%  ~Describe the value returned
@@ -68,7 +68,7 @@ getAlignGal(alignFilePath, format, genomeBuild,
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
-	\item{alignGal}{GappedAlignments object containning the processed alignments with the \code{values} slot saved for the "uniqueHits" binary flag (See \code{flagMultiHits} above) and \code{metadata} saved as a list containing argument setting for \code{reverseComplement, returnDuplicate, flagMultiHits, returnOnlyUniqueHits}	
+	\item{alignGal}{GAlignments object containning the processed alignments with the \code{values} slot saved for the "uniqueHits" binary flag (See \code{flagMultiHits} above) and \code{metadata} saved as a list containing argument setting for \code{reverseComplement, returnDuplicate, flagMultiHits, returnOnlyUniqueHits}	
 }
 }
 \references{
@@ -93,7 +93,7 @@ Yue Li
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-	\code{\link{combineAlignGals}, \link[GenomicRanges]{readGappedAlignments}, \link[GenomicRanges]{readGappedAlignmentPairs}, \link[rtracklayer]{import}}
+	\code{\link{combineAlignGals}, \link[GenomicRanges]{readGAlignments}, \link[GenomicRanges]{readGAlignmentPairs}, \link[rtracklayer]{import}}
 }
 \examples{
 # Retrieve system files

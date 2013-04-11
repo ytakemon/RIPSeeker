@@ -2,9 +2,9 @@
 # Description: 		among multiple alignments of the same read (i.e. multihit),
 #					select the alignment corresponding to the bin with maximum
 #					posterior for the enriched hidden state.
-# Input: 			GappedAlignment with 1-read-(>=1)-alignments
+# Input: 			GAlignments with 1-read-(>=1)-alignments
 #					posterior decoding from HMM (GRanges) 
-# Output:			the same GappedAlignment with 1-read-1-alignment 
+# Output:			the same GAlignments with 1-read-1-alignment 
 #
 # Author: Yue Li
 ###############################################################################

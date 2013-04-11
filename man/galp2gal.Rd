@@ -3,11 +3,11 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 %%  ~~function to do ... ~~
-Convert GappedAlignmentPairs to GappedAlignments
+Convert GAlignmentPairs to GAlignments
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
-Convert GappedAlignmentPairs to GappedAlignments using CIGAR to mark flanked portion of the pairs as 'N'.
+Convert GAlignmentPairs to GAlignments using CIGAR to mark flanked portion of the pairs as 'N'.
 }
 \usage{
 galp2gal(galp)
@@ -28,7 +28,7 @@ Each proper read pairs is combined into a single alignment record making use of 
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
-\item{gal}{GappedAlignments object containing for each paired alignments a single alignment record.}
+\item{gal}{GAlignments object containing for each paired alignments a single alignment record.}
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -47,7 +47,7 @@ Yue Li
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-\code{\link{getAlignGal}, \link{combineAlignGals}, \link[GenomicRanges]{readGappedAlignments}, \link[GenomicRanges]{readGappedAlignmentPairs}, \link[rtracklayer]{import}}
+\code{\link{getAlignGal}, \link{combineAlignGals}, \link[GenomicRanges]{readGAlignments}, \link[GenomicRanges]{readGAlignmentPairs}, \link[rtracklayer]{import}}
 }
 \examples{
 library(Rsamtools)
@@ -56,7 +56,7 @@ extdata.dir <- system.file("extdata", package="RIPSeeker")
 
 ex1_file <- list.files(extdata.dir, "ex1.bam", recursive=TRUE, full.names=TRUE)
 
-galp <- readGappedAlignmentPairs(ex1_file, use.names=TRUE)
+galp <- readGAlignmentPairs(ex1_file, use.names=TRUE)
 
 galp
 

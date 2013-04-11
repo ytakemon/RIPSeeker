@@ -29,11 +29,11 @@ mainSeek(bamFiles, reverseComplement = FALSE,
 }
   \item{genomeBuild}{
 %%     ~~Describe \code{genomeBuild} here~~
-	When the input alignment format is BED, genomeBuild is only required in \code{\link{getAlignGal}} to determine the chromosome lengths for the GappedAlignments obejct using function \code{\link{SeqinfoForUCSCGenome}}. BAM and SAM header have chromosome information, and thus genomeBuild is not needed.
+	When the input alignment format is BED, genomeBuild is only required in \code{\link{getAlignGal}} to determine the chromosome lengths for the GAlignments obejct using function \code{\link{SeqinfoForUCSCGenome}}. BAM and SAM header have chromosome information, and thus genomeBuild is not needed.
 }
   \item{uniqueHit}{
 %%     ~~Describe \code{uniqueHit} here~~
-	Binary indicator. If uniqueHit=TRUE, only reads mapped to single unique loci are used to train the HMM. Otherwise, all of the reads including multihits will be used for the HMM. A multihit is a read mapped to more than one loci. The flags for uniqueHits and multihits are the metadata values of GappedAlignments object constructed in \code{\link{getAlignGal}}.
+	Binary indicator. If uniqueHit=TRUE, only reads mapped to single unique loci are used to train the HMM. Otherwise, all of the reads including multihits will be used for the HMM. A multihit is a read mapped to more than one loci. The flags for uniqueHits and multihits are the metadata values of GAlignments object constructed in \code{\link{getAlignGal}}.
 }
   \item{assignMultihits}{
 %%     ~~Describe \code{assignMultihits} here~~
@@ -61,7 +61,7 @@ mainSeek(bamFiles, reverseComplement = FALSE,
 }
   \item{returnAllResults}{
 %%     ~~Describe \code{returnAllResults} here~~
-	Binary indicator to indicate whether to return all (HMM trained parameters, original, and disambiguated GappedAlignments) or just the HMM results.
+	Binary indicator to indicate whether to return all (HMM trained parameters, original, and disambiguated GAlignments) or just the HMM results.
 }
   \item{\dots}{
 %%     ~~Describe \code{\dots} here~~
@@ -79,7 +79,7 @@ mainSeek(bamFiles, reverseComplement = FALSE,
 %% ...
 	A list containing:
 	\item{nbhGRList}{GRangesList each item containig the HMM training results on a single chromosome.}
-	\item{alignGal}{Original alignment data in GappedAlignment object}
+	\item{alignGal}{Original alignment data in GAlignments object}
 	\item{alignGalFiltered}{Disambiguated alignmnet data with multihits assigned to unique loci.}
 }
 % \references{

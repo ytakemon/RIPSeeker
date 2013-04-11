@@ -16,7 +16,7 @@ disambiguateMultihits(alignGal, nbhGRList, postprobCutoff = 0)
 \arguments{
   \item{alignGal}{
 %%     ~~Describe \code{alignGal} here~~
-	GappedAlignment object with an additional column in the \code{values} slot that indicates whether the read corresponding to the current alignment is a unique hit (i.e., read mapped uniquely to a single loci) or multihit (i.e., read mapped to multiple loci).
+	GAlignments object with an additional column in the \code{values} slot that indicates whether the read corresponding to the current alignment is a unique hit (i.e., read mapped uniquely to a single loci) or multihit (i.e., read mapped to multiple loci).
 }
   \item{nbhGRList}{
 %%     ~~Describe \code{nbhGRList} here~~
@@ -37,7 +37,7 @@ Each multihit (i.e., read aligned to multiple loci) flagged in the \code{\link{g
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
-GappedAlignments with each read mapped uniquely to a single locus.
+GAlignments with each read mapped uniquely to a single locus.
 }
 % \references{
 % %% ~put references to the literature/web site here ~

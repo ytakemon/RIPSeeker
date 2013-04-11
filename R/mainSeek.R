@@ -1,7 +1,7 @@
 # Function Name: 	mainSeekMC, multicore version of mainSeek using mclapply
 # Description: 		runs main for RIP or CTL bam file(s); treat multiple bams as replicate and combine them; actual RIP regions will be predicted in seekRIP outside of this function
 # Input: 			bamPath to bam files (either a single dir or the multiple file paths) 
-# Output:			GappedAlignment and GRanges objects representating alignment object after disambiguating multihits (if any) and predicted RIP bins (not regions yet)
+# Output:			GAlignments and GRanges objects representating alignment object after disambiguating multihits (if any) and predicted RIP bins (not regions yet)
 #
 # Author: Yue Li
 ###############################################################################

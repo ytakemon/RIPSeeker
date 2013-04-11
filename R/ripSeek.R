@@ -1,7 +1,7 @@
 # Function Name: 	ripSeek
 # Description: 		Grand master function of RIPSeeker: run mainSeek with or without control library
 # Input: 			bamPath to bam files (either a single dir or the multiple file paths) 
-# Output:			GappedAlignment and GRanges objects representating alignment object after disambiguating multihits (if any) and predicted RIP regions in a defined format (default: GFF3)
+# Output:			GAlignments and GRanges objects representating alignment object after disambiguating multihits (if any) and predicted RIP regions in a defined format (default: GFF3)
 #
 # Author: Yue Li
 ###############################################################################

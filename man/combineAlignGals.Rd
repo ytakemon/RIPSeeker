@@ -3,11 +3,11 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 %%  ~~function to do ... ~~
-Combine alignment files into a single GappedAlignment object 
+Combine alignment files into a single GAlignments object 
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
-Import and process individual BAM/SAM/BED alignment files using \code{\link{getAlignGal}} and combine them into a single GappedAlignments.
+Import and process individual BAM/SAM/BED alignment files using \code{\link{getAlignGal}} and combine them into a single GAlignments.
 }
 \usage{
 combineAlignGals(bamFiles, ...)
@@ -25,7 +25,7 @@ combineAlignGals(bamFiles, ...)
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
-	If there is only one BAM file, then simply return the output from \code{\link{getAlignGal}}; otherwise, all processed alignments are pooled to form a single GappedAlignment object.
+	If there is only one BAM file, then simply return the output from \code{\link{getAlignGal}}; otherwise, all processed alignments are pooled to form a single GAlignments object.
 }
 \value{
 %%  ~Describe the value returned
@@ -33,7 +33,7 @@ combineAlignGals(bamFiles, ...)
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
-	\item{combinedGal}{GappedAlignments object containning the (combined) processed alignments with the \code{values} slot saved for the "uniqueHits" binary flag defined in \code{\link{getAlignGal}} and \code{metadata} saved as a list containing argument setting for \code{reverseComplement, returnDuplicate, flagMultiHits, returnOnlyUniqueHits} defined in \code{\link{getAlignGal}}}.
+	\item{combinedGal}{GAlignments object containning the (combined) processed alignments with the \code{values} slot saved for the "uniqueHits" binary flag defined in \code{\link{getAlignGal}} and \code{metadata} saved as a list containing argument setting for \code{reverseComplement, returnDuplicate, flagMultiHits, returnOnlyUniqueHits} defined in \code{\link{getAlignGal}}}.
 }
 % \references{
 % %% ~put references to the literature/web site here ~
@@ -51,7 +51,7 @@ User are recommanded to pool technical replicates but keep biological replicate 
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-\code{\link{getAlignGal}, \link[GenomicRanges]{readGappedAlignments}, \link[GenomicRanges]{readGappedAlignmentPairs}, \link[rtracklayer]{import}}
+\code{\link{getAlignGal}, \link[GenomicRanges]{readGAlignments}, \link[GenomicRanges]{readGAlignmentPairs}, \link[rtracklayer]{import}}
 }
 \examples{
 # Retrieve system files

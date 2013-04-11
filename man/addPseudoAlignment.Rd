@@ -49,7 +49,7 @@ Yue Li
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-	\code{\link{combineAlignGals}, \link[GenomicRanges]{readGappedAlignments}, \link[GenomicRanges]{readGappedAlignmentPairs}, \link[rtracklayer]{import}}
+	\code{\link{combineAlignGals}, \link[GenomicRanges]{readGAlignments}, \link[GenomicRanges]{readGAlignmentPairs}, \link[rtracklayer]{import}}
 }
 \examples{
 # Retrieve system files

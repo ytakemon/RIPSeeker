@@ -1,9 +1,9 @@
 # Function Name:	selectBinSize
-# Description:		Convert alignment file in BAM or BED format to GappedAlignments obejct;
+# Description:		Convert alignment file in BAM or BED format to GAlignments obejct;
 # 					If BED file is provided, genomeBuild is needed to get chromosome lengths;
-# 					GappedAlignments object is intended for read coverage
+# 					GAlignments object is intended for read coverage
 # Input: 			alignFilePath etc
-# Output:			GappedAlignment object 
+# Output:			GAlignments object 
 #
 # Author: Yue Li
 ###############################################################################
@@ -18,9 +18,9 @@ getAlignGal <- function(alignFilePath, format, genomeBuild,
 	# private function used to read single-end or paired-end data 
 	getAlignGalPrivate <- function(alignFilePath, paired, param) {
 		
-		if(!paired) alignGal <- readGappedAlignments(alignFilePath, use.names=TRUE, param=param)
+		if(!paired) alignGal <- readGAlignments(alignFilePath, use.names=TRUE, param=param)
 		
-		if(paired) alignGal <- galp2gal(readGappedAlignmentPairs(alignFilePath, use.names=TRUE, param=param))
+		if(paired) alignGal <- galp2gal(readGAlignmentPairs(alignFilePath, use.names=TRUE, param=param))
 		
 		return(alignGal)
 	}
@@ -93,7 +93,7 @@ getAlignGal <- function(alignFilePath, format, genomeBuild,
 		
 		if(missing(genomeBuild)) {
 			
-			stop("genomeBuild is needed to determine chromosome lengths for the GappedAlignments obejct")
+			stop("genomeBuild is needed to determine chromosome lengths for the GAlignments obejct")
 			
 		} else { # determien chromosome length from genomeBuild
 						
@@ -104,8 +104,8 @@ getAlignGal <- function(alignFilePath, format, genomeBuild,
 			
 			if(!returnDuplicate) alignGR <- unique(alignGR)
 						
-			# construct GappedAlignments object			
-			alignGal <- GappedAlignments(names = values(alignGR)$name,
+			# construct GAlignments object			
+			alignGal <- GAlignments(names = values(alignGR)$name,
 						seqnames = seqnames(alignGR),
 			 			pos = start(alignGR), strand = strand(alignGR),
 					 	cigar=paste(width(alignGR), "M", sep=""))

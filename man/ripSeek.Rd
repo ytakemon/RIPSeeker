@@ -32,7 +32,7 @@ ripSeek(bamPath, cNAME, binSize = NULL, strandType = NULL,
 }
   \item{strandType}{
 %%     ~~Describe \code{strandType} here~~
-	Type of strand can be +, -, or * as in GappedAlignments, GappedAlignmentPairs, or GRanges (see \code{\link{GenomicRanges}}).
+	Type of strand can be +, -, or * as in GAlignments, GAlignmentPairs, or GRanges (see \code{\link{GenomicRanges}}).
 }
   \item{paired}{
 %%     ~~Describe \code{strandType} here~~
@@ -98,14 +98,14 @@ This is the main front-end function of RIPSeeker and in many cases the only func
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 A list is returned with the following items:
-% \item{mainSeekOutputRIP}{A list comprising two item: (1) GRangesList of the HMM trained parameters for each chromosome on RIP; (2) GappedAlignments object of processed the RIP alignment inputs from \code{\link{combineAlignGals}}.}
+% \item{mainSeekOutputRIP}{A list comprising two item: (1) GRangesList of the HMM trained parameters for each chromosome on RIP; (2) GAlignments object of processed the RIP alignment inputs from \code{\link{combineAlignGals}}.}
 % \item{mainSeekOutputCTL}{Same as \code{mainSeekOutputRIP} but for the control library.}
 
 \item{mainSeekOutputRIP}{A (inner) list comprising three items:
 
 	\code{nbhGRList}: \code{\link[GenomicRanges]{GRangesList}} of the HMM trained parameters for each chromosome on RIP.
   
-	\code{alignGal, alignGalFiltered}: \code{\link[GenomicRanges]{GappedAlignments}} objects of the RIP alignment outputs from \code{\link{combineAlignGals}} and \code{\link{disambiguateMultihits}}, respectively. The former may contain multiple alignments due to the same reads whereas the latter contains a one-to-one mapping from read to alignment after disambiguating the multihits.
+	\code{alignGal, alignGalFiltered}: \code{\link[GenomicRanges]{GAlignments}} objects of the RIP alignment outputs from \code{\link{combineAlignGals}} and \code{\link{disambiguateMultihits}}, respectively. The former may contain multiple alignments due to the same reads whereas the latter contains a one-to-one mapping from read to alignment after disambiguating the multihits.
 }
 
 \item{mainSeekOutputCTL}{Same as \code{mainSeekOutputRIP} but for the control library (if available).}

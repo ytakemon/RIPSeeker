@@ -2,7 +2,7 @@
 # Description: 		Read each BAM/SAM/BED using getAlignGal.R and combine them 
 #					(e.g. technical/biological replicates).					
 # Input: 			a list or vector of bam file names in full path
-# Output:			combined GappedAlignment objects
+# Output:			combined GAlignments objects
 #
 # Author: Yue Li
 ###############################################################################

@@ -1,7 +1,7 @@
 # Function Name: 	galp2gal
-# Description: 		Convert GappedAlignmentPairs to GappedAlignments using CIGAR to mark flanked portion of the pairs as 'N'					
-# Input: 			GappedAlignmentPairs
-# Output:			GappedAlignments
+# Description: 		Convert GAlignmentPairs to GAlignments using CIGAR to mark flanked portion of the pairs as 'N'					
+# Input: 			GAlignmentPairs
+# Output:			GAlignments
 #
 # Author: Yue Li
 ###############################################################################
@@ -12,7 +12,7 @@ galp2gal <- function(galp)
 	
 	galcigar <- paste(cigar(left(galp)), betweenPairCigar, cigar(right(galp)), sep="")
   		
-	gal <- GappedAlignments(
+	gal <- GAlignments(
 				seqnames = seqnames(galp),
 			
 				pos = start(left(galp)),

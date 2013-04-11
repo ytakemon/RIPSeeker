@@ -80,17 +80,17 @@ computeRPKM <- function(bamFiles, RIPSeekerRead=TRUE, paired=FALSE,
 				
 				param <- ScanBamParam(flag=scanBamFlag(isUnmappedQuery=FALSE, isPaired=paired, hasUnmappedMate=FALSE, isProperPair=paired, isDuplicate=FALSE))
 				
-				if(is.null(aligns)) aligns <- galp2gal(readGappedAlignmentPairs(bamFile, param=param))
+				if(is.null(aligns)) aligns <- galp2gal(readGAlignmentPairs(bamFile, param=param))
 				
-				if(!is.null(aligns)) aligns <- append(aligns, galp2gal(readGappedAlignmentPairs(bamFile, param=param)))
+				if(!is.null(aligns)) aligns <- append(aligns, galp2gal(readGAlignmentPairs(bamFile, param=param)))
 				
 			} else { # single-end
 				
 				param <- ScanBamParam(flag=scanBamFlag(isUnmappedQuery=FALSE, isDuplicate=FALSE))
 				
-				if(is.null(aligns)) aligns <- readGappedAlignments(bamFile, param=param)
+				if(is.null(aligns)) aligns <- readGAlignments(bamFile, param=param)
 				
-				if(!is.null(aligns)) aligns <- append(aligns, readGappedAlignments(bamFile, param=param))
+				if(!is.null(aligns)) aligns <- append(aligns, readGAlignments(bamFile, param=param))
 			}						
 		}
 	}
