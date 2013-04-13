@@ -12,7 +12,7 @@ RIPSeeker infers and discriminates RIP peaks from RIP-seq alignments using two-s
 \tabular{ll}{
 Package: \tab RIPSeeker\cr
 Type: \tab Package\cr
-Version: \tab 0.99.8\cr
+Version: \tab 1.0.0\cr
 Date: \tab 2012-11-06\cr
 License: \tab GPL-2\cr
 }
@@ -22,10 +22,9 @@ The front-end main function \code{\link{ripSeek}} suffices for most applications
 Yue Li <yueli@cs.toronto.edu>
 }
 \references{
-The RIPSeeker manuscript has been submitted to NAR for review.
+Li, Y., Zhao, D. Y., Greenblatt, J. F., & Zhang, Z. (2013). RIPSeeker: a statistical package for identifying protein-associated transcripts from RIP-seq experiments. Nucleic Acids Research. doi:10.1093/nar/gkt142
 
 Zhao, J., Ohsumi, T. K., Kung, J. T., Ogawa, Y., Grau, D. J., Sarma, K., Song, J. J., et al. (2010). Genome-wide Identification of Polycomb-Associated RNAs by RIP-seq. Molecular Cell, 40(6), 939D953. doi:10.1016/j.molcel.2010.12.011
-
 }
 %%~~ Optionally other standard keywords, one per line, from file KEYWORDS in ~~
 %%~~ the R documentation directory ~~
