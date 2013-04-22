@@ -6,12 +6,12 @@ citEntry(entry="article",
 				as.person("Zhaolei Zhang")),
          year = 2013,
          journal = "Nucleic Acid Research",
-         volume = "X",
-         pages = "1-18",
+         volume = "41",
+         pages = "e94",
          doi = "10.1093/nar/gkt142",
          url = "http://nar.oxfordjournals.org/content/early/2013/02/28/nar.gkt142.abstract",
          
          textVersion = 
-         paste("Yue Li, Dorothy Yanling Zhao, Jack Greenblatt and Zhaolei Zhang (2012):", 
+         paste("Yue Li, Dorothy Yanling Zhao, Jack Greenblatt and Zhaolei Zhang (2013):", 
                "RIPSeeker: a statistical package for identifying protein-associated transcripts from RIP-seq experiments",
-                "Nucleic Acid Research" ) )
+                "Nucleic Acid Research, 41(8), e94. doi:10.1093/nar/gkt142" ) )
