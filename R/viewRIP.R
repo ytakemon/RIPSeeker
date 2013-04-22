@@ -85,6 +85,11 @@ viewRIP <- function(seekedRIP, alignGR, alignGRCTL, binGR=seekedRIP, scoreType =
 	trackNames(session) ## list the track names
 	
 	# launch browser view
-	browserView(session, range(seekedRIP))
-			
+# 	browserView(session, range(seekedRIP))
+	displayRange <- GRangesForUCSCGenome(genome(seekedRIP)[1],
+	                                     as.character(seqnames(seekedRIP)[1]),
+	                                     IRanges(start(range(seekedRIP)),
+	                                             end=end(range(seekedRIP))))
+	
+	browserView(session, displayRange)
 }
