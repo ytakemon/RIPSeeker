@@ -12,7 +12,7 @@ RIPSeeker infers and discriminates RIP peaks from RIP-seq alignments using two-s
 \tabular{ll}{
 Package: \tab RIPSeeker\cr
 Type: \tab Package\cr
-Version: \tab 1.0.0\cr
+Version: \tab 1.0.1\cr
 Date: \tab 2012-11-06\cr
 License: \tab GPL-2\cr
 }
