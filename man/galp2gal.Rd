@@ -47,7 +47,7 @@ Yue Li
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-\code{\link{getAlignGal}, \link{combineAlignGals}, \link[GenomicRanges]{readGAlignments}, \link[GenomicRanges]{readGAlignmentPairs}, \link[rtracklayer]{import}}
+\code{\link{getAlignGal}, \link{combineAlignGals}, \link[GenomicAlignments]{readGAlignments}, \link[GenomicRanges]{readGAlignmentPairs}, \link[rtracklayer]{import}}
 }
 \examples{
 library(Rsamtools)
