@@ -60,7 +60,7 @@ getAlignGal(alignFilePath, format, genomeBuild,
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
-	The BAM file is imported using \code{\link[GenomicAlignments]{readGAlignments}} for single-end or \code{\link[GenomicRanges]{readGAlignmentPairs}} for paired-end alignments. The SAM file is converted to BAM first and then imported as above. The BED file is first imported by \code{\link[rtracklayer]{import}} as GRanges object and subsequently converted to \code{GAlignments} via the constructor function \code{\link[GenomicRanges]{GAlignments}}.
+	The BAM file is imported using \code{\link[GenomicAlignments]{readGAlignments}} for single-end or \code{\link[GenomicAlignments]{readGAlignmentPairs}} for paired-end alignments. The SAM file is converted to BAM first and then imported as above. The BED file is first imported by \code{\link[rtracklayer]{import}} as GRanges object and subsequently converted to \code{GAlignments} via the constructor function \code{\link[GenomicRanges]{GAlignments}}.
 }
 \value{
 %%  ~Describe the value returned
@@ -93,7 +93,7 @@ Yue Li
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-	\code{\link{combineAlignGals}, \link[GenomicAlignments]{readGAlignments}, \link[GenomicRanges]{readGAlignmentPairs}, \link[rtracklayer]{import}}
+	\code{\link{combineAlignGals}, \link[GenomicAlignments]{readGAlignments}, \link[GenomicAlignments]{readGAlignmentPairs}, \link[rtracklayer]{import}}
 }
 \examples{
 # Retrieve system files

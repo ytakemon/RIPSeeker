@@ -51,7 +51,7 @@ User are recommanded to pool technical replicates but keep biological replicate 
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-\code{\link{getAlignGal}, \link[GenomicAlignments]{readGAlignments}, \link[GenomicRanges]{readGAlignmentPairs}, \link[rtracklayer]{import}}
+\code{\link{getAlignGal}, \link[GenomicAlignments]{readGAlignments}, \link[GenomicAlignments]{readGAlignmentPairs}, \link[rtracklayer]{import}}
 }
 \examples{
 # Retrieve system files
