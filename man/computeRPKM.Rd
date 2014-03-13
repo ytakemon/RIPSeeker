@@ -73,7 +73,7 @@ computeRPKM(bamFiles, RIPSeekerRead = TRUE, paired = FALSE,
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
-	The function is a wrapper function making use of several external functions from several well maintained and freely available Bioconductor packages including GenomicFeatures, GenomicRanges, biomaRt and Rsamtools packages. The paired-end alignments are converted into single-end using function \code{\link{galp2gal}} and then subject to read count computation by \code{\link[GenomicRanges]{summarizeOverlaps}}, which does not yet directly support paired-end alignments.
+	The function is a wrapper function making use of several external functions from several well maintained and freely available Bioconductor packages including GenomicFeatures, GenomicRanges, biomaRt and Rsamtools packages. The paired-end alignments are converted into single-end using function \code{\link{galp2gal}} and then subject to read count computation by \code{\link[GenomicAlignments]{summarizeOverlaps}}, which does not yet directly support paired-end alignments.
 }
 \value{
 %%  ~Describe the value returned
@@ -110,7 +110,7 @@ Also works for RNA-seq alignments.
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-\code{\link[GenomicFeatures]{makeTranscriptDbFromBiomart}, \link[GenomicFeatures]{makeTranscriptDbFromUCSC}, \link[biomaRt]{useMart}, \link[GenomicFeatures]{exonsBy}, \link[GenomicFeatures]{cdsBy}, \link[GenomicFeatures]{intronsByTranscript}, \link[GenomicFeatures]{fiveUTRsByTranscript}, \link[GenomicFeatures]{threeUTRsByTranscript}, \link[GenomicFeatures]{cdsBy}, \link{combineAlignGals}, \link[GenomicRanges]{summarizeOverlaps}, \link[Rsamtools]{ScanBamParam}, \link[GenomicAlignments]{readGAlignmentPairs}, \link[GenomicAlignments]{readGAlignments} }
+\code{\link[GenomicFeatures]{makeTranscriptDbFromBiomart}, \link[GenomicFeatures]{makeTranscriptDbFromUCSC}, \link[biomaRt]{useMart}, \link[GenomicFeatures]{exonsBy}, \link[GenomicFeatures]{cdsBy}, \link[GenomicFeatures]{intronsByTranscript}, \link[GenomicFeatures]{fiveUTRsByTranscript}, \link[GenomicFeatures]{threeUTRsByTranscript}, \link[GenomicFeatures]{cdsBy}, \link{combineAlignGals}, \link[GenomicAlignments]{summarizeOverlaps}, \link[Rsamtools]{ScanBamParam}, \link[GenomicAlignments]{readGAlignmentPairs}, \link[GenomicAlignments]{readGAlignments} }
 }
 \examples{
 if(interactive()) { # need internet connection

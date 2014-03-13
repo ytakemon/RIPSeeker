@@ -153,7 +153,9 @@ ripSeek <- function(bamPath, cNAME, binSize=NULL, strandType=NULL,
 		
 		stage <- stage + 1	
 	}
-		
+	
+	if(!exists("bamFilesCTL"))  mainSeekOutputCTL <- NULL
+	if(!exists("annotatedRIPGR"))  annotatedRIPGR <- NULL
 	
 	################ save and export results to outDir ################
 	if(!missing(outDir)) {
@@ -169,10 +171,7 @@ ripSeek <- function(bamPath, cNAME, binSize=NULL, strandType=NULL,
 		message(sprintf("\n**A. Saving RData to %s\n", outfile))
 		
 						
-		################ save results in RData ################
-		if(!exists("bamFilesCTL"))  mainSeekOutputCTL <- NULL
-		if(!exists("annotatedRIPGR"))  annotatedRIPGR <- NULL
-			
+		################ save results in RData ################			
 		save(mainSeekOutputRIP, RIPGRList, mainSeekOutputCTL, annotatedRIPGR, file=outfile)	
 			
 											
