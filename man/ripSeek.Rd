@@ -105,7 +105,7 @@ A list is returned with the following items:
 
 	\code{nbhGRList}: \code{\link[GenomicRanges]{GRangesList}} of the HMM trained parameters for each chromosome on RIP.
   
-	\code{alignGal, alignGalFiltered}: \code{\link[GenomicRanges]{GAlignments}} objects of the RIP alignment outputs from \code{\link{combineAlignGals}} and \code{\link{disambiguateMultihits}}, respectively. The former may contain multiple alignments due to the same reads whereas the latter contains a one-to-one mapping from read to alignment after disambiguating the multihits.
+	\code{alignGal, alignGalFiltered}: \code{\link[GenomicAlignments]{GAlignments}} objects of the RIP alignment outputs from \code{\link{combineAlignGals}} and \code{\link{disambiguateMultihits}}, respectively. The former may contain multiple alignments due to the same reads whereas the latter contains a one-to-one mapping from read to alignment after disambiguating the multihits.
 }
 
 \item{mainSeekOutputCTL}{Same as \code{mainSeekOutputRIP} but for the control library (if available).}

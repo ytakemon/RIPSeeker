@@ -103,7 +103,7 @@ Also works for RNA-seq alignments.
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-\code{\link[GenomicFeatures]{makeTranscriptDbFromBiomart}, \link[GenomicFeatures]{makeTranscriptDbFromUCSC}, \link[biomaRt]{useMart}, \link[GenomicFeatures]{exonsBy}, \link[GenomicFeatures]{cdsBy}, \link[GenomicFeatures]{intronsByTranscript}, \link[GenomicFeatures]{fiveUTRsByTranscript}, \link[GenomicFeatures]{threeUTRsByTranscript}, \link[GenomicFeatures]{cdsBy}, \link{combineAlignGals}, \link[GenomicRanges]{summarizeOverlaps}, \link[Rsamtools]{ScanBamParam}, \link[GenomicAlignments]{readGAlignmentPairs}, \link[GenomicAlignments]{readGAlignments} }
+\code{\link[GenomicFeatures]{makeTranscriptDbFromBiomart}, \link[GenomicFeatures]{makeTranscriptDbFromUCSC}, \link[biomaRt]{useMart}, \link[GenomicFeatures]{exonsBy}, \link[GenomicFeatures]{cdsBy}, \link[GenomicFeatures]{intronsByTranscript}, \link[GenomicFeatures]{fiveUTRsByTranscript}, \link[GenomicFeatures]{threeUTRsByTranscript}, \link[GenomicFeatures]{cdsBy}, \link{combineAlignGals}, \link[GenomicAlignments]{summarizeOverlaps}, \link[Rsamtools]{ScanBamParam}, \link[GenomicAlignments]{readGAlignmentPairs}, \link[GenomicAlignments]{readGAlignments} }
 }
 \examples{
 if(interactive()) {
