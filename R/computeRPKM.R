@@ -155,8 +155,11 @@ computeRPKM <- function(bamFiles, RIPSeekerRead=TRUE, paired=FALSE,
 				geneInfo[,4, drop=FALSE], uniqueMapCount=rpkmDF$counts,
 				ensembl_gene_id=geneInfo$ensembl_gene_id, 
 				geneLength=abs(geneInfo$end - geneInfo$start),
-				description=geneInfo$description,
-				RPKM=rpkmDF$rpkm)
+				description=geneInfo$description)
+    
+		if(!paired) rpkmDF.annotated$RPKM <- rpkmDF$rpkm
+    
+		if(paired) rpkmDF.annotated$FPKM <- rpkmDF$fpkm
 		
 		rownames(rpkmDF.annotated) <- rownames(rpkmDF)							
 		
