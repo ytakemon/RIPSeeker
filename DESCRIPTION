@@ -2,7 +2,7 @@ Package: RIPSeeker
 Type: Package
 Title: RIPSeeker: a statistical package for identifying
         protein-associated transcripts from RIP-seq experiments
-Version: 1.9.0
+Version: 1.9.1
 Date: 2013-Apr-13
 Author: Yue Li
 Maintainer: Yue Li <yueli@cs.toronto.edu>

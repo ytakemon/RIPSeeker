@@ -19,12 +19,12 @@ computeRPKM <- function(bamFiles, RIPSeekerRead=TRUE, paired=FALSE,
 		stopifnot(list(...)$by %in% c("tx", "gene"))
 		
 		# hack functions to ignore unused arguments
-		formals(makeTranscriptDbFromBiomart) <- c(formals(makeTranscriptDbFromBiomart), alist(... = ))
-		formals(makeTranscriptDbFromUCSC) <- c(formals(makeTranscriptDbFromUCSC), alist(... = ))				
+		formals(makeTxDbFromBiomart) <- c(formals(makeTxDbFromBiomart), alist(... = ))
+		formals(makeTxDbFromUCSC) <- c(formals(makeTxDbFromUCSC), alist(... = ))				
 										
-		if(txDbName == "biomart") txDb <- makeTranscriptDbFromBiomart(...)
+		if(txDbName == "biomart") txDb <- makeTxDbFromBiomart(...)
 		
-		if(txDbName == "UCSC") txDb <- makeTranscriptDbFromUCSC(...)
+		if(txDbName == "UCSC") txDb <- makeTxDbFromUCSC(...)
 						
 		# group annotation by transcripts ("tx") or gene
 		if(list(...)$by == "tx") {

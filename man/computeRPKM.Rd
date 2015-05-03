@@ -52,7 +52,7 @@ computeRPKM(bamFiles, RIPSeekerRead = TRUE, paired = FALSE,
 }
   \item{txDbName}{
 %%     ~~Describe \code{txDbName} here~~
-	Name of the transcript database to use to retreive the annotation. The available options are "biomart" (Default) or "UCSC" corresponding to the functions \code{\link[GenomicFeatures]{makeTranscriptDbFromBiomart}} and \code{\link[GenomicFeatures]{makeTranscriptDbFromUCSC}}, respectively.
+	Name of the transcript database to use to retreive the annotation. The available options are "biomart" (Default) or "UCSC" corresponding to the functions \code{\link[GenomicFeatures]{makeTxDbFromBiomart}} and \code{\link[GenomicFeatures]{makeTxDbFromUCSC}}, respectively.
 }
   \item{moreGeneInfo}{
 %%     ~~Describe \code{moreGeneInfo} here~~
@@ -68,7 +68,7 @@ computeRPKM(bamFiles, RIPSeekerRead = TRUE, paired = FALSE,
 }
   \item{\dots}{
 %%     ~~Describe \code{\dots} here~~
-	Extra arguments passed to functions \code{\link[GenomicFeatures]{makeTranscriptDbFromBiomart}}, \code{\link[GenomicFeatures]{makeTranscriptDbFromUCSC}}, \code{\link[biomaRt]{useMart}}, \code{\link{combineAlignGals}}.
+	Extra arguments passed to functions \code{\link[GenomicFeatures]{makeTxDbFromBiomart}}, \code{\link[GenomicFeatures]{makeTxDbFromUCSC}}, \code{\link[biomaRt]{useMart}}, \code{\link{combineAlignGals}}.
 }
 }
 \details{
@@ -110,7 +110,7 @@ Also works for RNA-seq alignments.
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-\code{\link[GenomicFeatures]{makeTranscriptDbFromBiomart}, \link[GenomicFeatures]{makeTranscriptDbFromUCSC}, \link[biomaRt]{useMart}, \link[GenomicFeatures]{exonsBy}, \link[GenomicFeatures]{cdsBy}, \link[GenomicFeatures]{intronsByTranscript}, \link[GenomicFeatures]{fiveUTRsByTranscript}, \link[GenomicFeatures]{threeUTRsByTranscript}, \link[GenomicFeatures]{cdsBy}, \link{combineAlignGals}, \link[GenomicAlignments]{summarizeOverlaps}, \link[Rsamtools]{ScanBamParam}, \link[GenomicAlignments]{readGAlignmentPairs}, \link[GenomicAlignments]{readGAlignments} }
+\code{\link[GenomicFeatures]{makeTxDbFromBiomart}, \link[GenomicFeatures]{makeTxDbFromUCSC}, \link[biomaRt]{useMart}, \link[GenomicFeatures]{exonsBy}, \link[GenomicFeatures]{cdsBy}, \link[GenomicFeatures]{intronsByTranscript}, \link[GenomicFeatures]{fiveUTRsByTranscript}, \link[GenomicFeatures]{threeUTRsByTranscript}, \link[GenomicFeatures]{cdsBy}, \link{combineAlignGals}, \link[GenomicAlignments]{summarizeOverlaps}, \link[Rsamtools]{ScanBamParam}, \link[GenomicAlignments]{readGAlignmentPairs}, \link[GenomicAlignments]{readGAlignments} }
 }
 \examples{
 if(interactive()) { # need internet connection
