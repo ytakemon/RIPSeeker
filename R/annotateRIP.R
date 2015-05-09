@@ -43,7 +43,7 @@ annotateRIP <- function(sigGRanges, biomaRt_dataset, featureType="TSS", goAnno,
 			
 	
 	# more useful information based on ensembl gene ID
-	geneInfo <- getBM(mart=mart, attributes=c("ensembl_gene_id", "external_gene_id", "description"),filters="ensembl_gene_id", values = annotatedPeak$feature)
+	geneInfo <- getBM(mart=mart, attributes=c("ensembl_gene_id", "external_gene_name", "description"),filters="ensembl_gene_id", values = annotatedPeak$feature)
 			
 	geneInfo  <- geneInfo[match(annotatedPeak$feature, geneInfo$ensembl_gene_id),]
 		
