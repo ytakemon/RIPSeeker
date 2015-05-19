@@ -64,7 +64,7 @@ computeRPKM(bamFiles, RIPSeekerRead = TRUE, paired = FALSE,
 }
   \item{justRPKM}{
 %%     ~~Describe \code{justRPKM} here~~
-	Binary for whether to return only the \code{\link[GenomicRanges]{SummarizedExperiment}}.
+	Binary for whether to return only the \code{\link[SummarizedExperiment]{RangedSummarizedExperiment}}.
 }
   \item{\dots}{
 %%     ~~Describe \code{\dots} here~~
@@ -81,7 +81,7 @@ computeRPKM(bamFiles, RIPSeekerRead = TRUE, paired = FALSE,
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
-\item{rpkmSEobject}{A \code{\link[GenomicRanges]{SummarizedExperiment}} object with \code{assays} slot saved for counts, \code{rowData} holds the features, \code{exptData} for RPKM/FPKM (normalized) gene expression.}
+\item{rpkmSEobject}{A \code{\link[SummarizedExperiment]{RangedSummarizedExperiment}} object with \code{assays} slot saved for counts, \code{rowRanges} holds the features, \code{metadata} for RPKM/FPKM (normalized) gene expression.}
 \item{rpkmDF}{Data frame with or without the detailed gene information columns depending on whether \code{moreGeneInfo} is TRUE or FALSE. \code{rpkmDF} is only returned within in a list when \code{justRPKM} is FALSE.}
 \item{featureGRanges}{The features in GRanges object that are used to compute the gene expression. \code{featureGRanges} is only returned within in a list when \code{justRPKM} is FALSE.}
 }

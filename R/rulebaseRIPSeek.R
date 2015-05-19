@@ -29,17 +29,19 @@ rulebaseRIPSeek <- function(bamFiles, cNAME, featureGRanges,
 		
 			
 	##################### Compute Foldchange #####################
-	foldchange <- (unlist(exptData(nRPKM)) + myMin) / (unlist(exptData(dRPKM)) + myMin)
+	RIP_rpkm <- metadata(nRPKM)[["rpkm"]]
+	CTL_rpkm <- metadata(dRPKM)[["rpkm"]]
+	foldchange <- (RIP_rpkm + myMin) / (CTL_rpkm + myMin)
 		
 	
 	##################### Rule-based Threshold #####################		
 	# create a data.frame for easy viewing
 	rpkmDF <- data.frame(RIP_count=unlist(assays(nRPKM)), 
-						RIP_rpkm=unlist(exptData(nRPKM)),
-						CTL_count=unlist(assays(dRPKM)), 
-						CTL_rpkm=unlist(exptData(dRPKM)),
-						foldchange=foldchange,
-						row.names=names(rowData(nRPKM)), check.names=FALSE)
+			     RIP_rpkm=RIP_rpkm,
+			     CTL_count=unlist(assays(dRPKM)), 
+			     CTL_rpkm=CTL_rpkm,
+			     foldchange=foldchange,
+			     row.names=names(rowRanges(nRPKM)), check.names=FALSE)
 						
 				
 	rule <- (rpkmDF$RIP_rpkm >= rpkmCutoff) * (rpkmDF$foldchange >= fcCutoff)

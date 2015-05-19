@@ -97,7 +97,7 @@ computeRPKM <- function(bamFiles, RIPSeekerRead=TRUE, paired=FALSE,
 	
 	
 	##################### Compute RPKM #####################		
-	# count reads to return SummarizedExperiment object
+	# count reads to return RangedSummarizedExperiment object
 	rpkmSEobj <- summarizeOverlaps(features=featureGRanges, reads=aligns, mode=countMode, ignore.strand=ignore.strand)
 		
 	# get counts	
@@ -116,15 +116,15 @@ computeRPKM <- function(bamFiles, RIPSeekerRead=TRUE, paired=FALSE,
 	# reads per million per geneLength in Kb
 	rpkm <- rpm / geneLengthsInKB
 
-	# save rpkm in exptData slot of the SummarizedExperiment object
-	exptData(rpkmSEobj) <- SimpleList(as.list(rpkm))
+	# save rpkm in metadata slot of the RangedSummarizedExperiment object
+	metadata(rpkmSEobj) <- list(rpkm=rpkm)
 	
 	
 	##################### Save as data.frame #####################		
 	# create a data.frame for easy viewing
 	
 	rpkmDF <- data.frame(count=counts, rpkm=rpkm, totalExonLength=numBases,
-			row.names=names(rowData(rpkmSEobj)), check.names=FALSE)
+		      row.names=names(rowRanges(rpkmSEobj)), check.names=FALSE)
 	
 	if(!paired) names(rpkmDF) <- c("counts", "rpkm", "totalExonLength")
 	
