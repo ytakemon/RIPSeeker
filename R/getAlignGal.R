@@ -100,7 +100,7 @@ getAlignGal <- function(alignFilePath, format, genomeBuild,
 			# need rtracklayer library
 			chromInfo <- SeqinfoForUCSCGenome(genomeBuild)
 			
-			alignGR <- import(file, asRangedData = FALSE) # convert into GRanges first
+			alignGR <- import(file) # convert into GRanges first
 			
 			if(!returnDuplicate) alignGR <- unique(alignGR)
 						
