@@ -8,20 +8,20 @@
 
 galp2gal <- function(galp)
 {	
-	betweenPairCigar <- paste(abs(start(right(galp)) - end(left(galp)) + 1), "N", sep="")
+	betweenPairCigar <- paste(abs(start(last(galp)) - end(first(galp)) + 1), "N", sep="")
 	
-	galcigar <- paste(cigar(left(galp)), betweenPairCigar, cigar(right(galp)), sep="")
+	galcigar <- paste(cigar(first(galp)), betweenPairCigar, cigar(last(galp)), sep="")
   		
 	gal <- GAlignments(
 				seqnames = seqnames(galp),
 			
-				pos = start(left(galp)),
+				pos = start(first(galp)),
 			
 				cigar = galcigar,
 
-				strand = strand(left(galp)),
+				strand = strand(first(galp)),
 			
-				names = names(left(galp)),
+				names = names(first(galp)),
 				
 				seqlengths = seqlengths(galp))
   
