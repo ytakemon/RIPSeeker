@@ -141,7 +141,7 @@ ripGR <- as(ripGal, "GRanges")
 ripGRList <- split(ripGR, seqnames(ripGR))
 
 # get only the nonempty chromosome
-ripGRList <- ripGRList[elementLengths(ripGRList) != 0]
+ripGRList <- ripGRList[elementNROWS(ripGRList) != 0]
 
 ctlGR <- as(ctlGal, "GRanges")
 

@@ -1,4 +1,4 @@
-import(methods, IRanges, GenomicRanges, SummarizedExperiment, Rsamtools, GenomicAlignments)
+import(methods, S4Vectors, IRanges, GenomicRanges, SummarizedExperiment, Rsamtools, GenomicAlignments)
 
 importMethodsFrom(rtracklayer, browserSession,
                  browserView, export, genome,
